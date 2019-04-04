@@ -1,4 +1,4 @@
-<h1>Hi <%= current_user.first_name if current_user %></h1>
+<h1>Welcome <%= current_user.first_name if current_user %></h1>
 <% if current_user %>
   <p>YOU ARE WINNER</p>
   <p id="demo"></p>
@@ -7,3 +7,6 @@
       document.getElementById("demo").innerHTML = d;
   </script>
 <% end %>
+
+
+
