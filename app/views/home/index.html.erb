@@ -1,11 +1,29 @@
 <h1>Welcome <%= current_user.first_name if current_user %></h1>
 <% if current_user %>
   <p>YOU ARE WINNER</p>
-  <p id="demo"></p>
-  <script>
-      var d = new Date();
-      document.getElementById("demo").innerHTML = d;
-  </script>
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+
+  <body onload="startTime()">
+
+  <div id="txt"></div>
+
+  </body>
 
 <% end %>
 
