@@ -18,12 +18,24 @@
             return i;
         }
     </script>
-
   <body onload="startTime()">
-
   <div id="txt"></div>
 
-  </body>
+  <%= form_with method: :post, url: start_home_index_path, local: true do |form| %>
+    <%= form.submit 'Start'%>
+    <%= @start_time %>
+  <% end %>
+  <%= form_with method: :post, url: stop_home_index_path, local: true do |form| %>
+    <%= form.submit 'Stop'%>
+    <%= @stop_time %>
+  <% end %>
+  <select id="wine_color" name="wine[color]">
+    <option value=""></option>
+    <option value="red">red</option>
+    <option value="white">white</option>
+    <option value="sparkling">sparkling</option>
+  </select>
+
 
 <% end %>
 
