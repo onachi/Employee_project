@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+
   devise_for :users , path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :home, only: [:index] do
     collection do
       post :start
       post :stop
+    end
+  end
+  resources :status, only: [:index, :update] do
+    collection do
+      patch :update_status
     end
   end
   root to: "home#index"

@@ -29,12 +29,8 @@
     <%= form.submit 'Stop'%>
     <%= @stop_time %>
   <% end %>
-  <select id="wine_color" name="wine[color]">
-    <option value=""></option>
-    <option value="red">red</option>
-    <option value="white">white</option>
-    <option value="sparkling">sparkling</option>
-  </select>
+
+  <%= button_to  'ลา', status_index_path, method: :get %>
 
 
 <% end %>
