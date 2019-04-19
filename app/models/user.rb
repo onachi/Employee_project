@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :timesheets
+
   validates_presence_of :name
 
   def first_name

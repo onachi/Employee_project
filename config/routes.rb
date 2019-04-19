@@ -7,8 +7,10 @@ Rails.application.routes.draw do
       post :stop
     end
   end
-  resources :status, only: [:index, :update] do
+  resources :timesheets, only: [:index, :update] do
     collection do
+      post :start
+      post :stop
       patch :update_status
     end
   end
