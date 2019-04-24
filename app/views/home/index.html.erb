@@ -25,6 +25,7 @@
     <%= form.submit 'Start'%>
     <%= @start_time %>
   <% end %>
+
   <%= form_with method: :post, url: stop_home_index_path, local: true do |form| %>
     <%= form.submit 'Stop'%>
     <%= @stop_time %>
